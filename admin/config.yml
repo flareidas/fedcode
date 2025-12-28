@@ -1,1 +1,30 @@
+backend:
+  name: github
+  repo: flareidas/fedcode
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "categories"
+    label: "Categories"
+    folder: "content/categories"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Category Name", name: "title", widget: "string" }
+      - { label: "Order", name: "order", widget: "number" }
+
+  - name: "titles"
+    label: "Titles"
+    folder: "content/titles"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title Number", name: "number", widget: "string" }
+      - { label: "Title Name", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "relation", collection: "categories", search_fields: ["title"], value_field: "title", display_fields: ["title"] }
+      - { label: "Body Text", name: "body", widget: "markdown" }
+      - { label: "Last Updated", name: "updated", widget: "datetime" }
 
