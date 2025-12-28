@@ -2,6 +2,10 @@ backend:
   name: github
   repo: flareidas/fedcode
   branch: main
+  auth_type: oauth
+  client_id: Ov23li2FnGpNhZdndRVn
+  client_secret: ee8bfa0a65208c3e44cc44daf82e016051fa7980
+
 
 media_folder: "images"
 public_folder: "/images"
